@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>js_04Slario2 - do...while</title>
+</head>
+<body>
+    <script language="JavaScript">
+        /*
+        Objetivo: Calcular o salário liquido de um funcionário que trabalho por hora
+        - Para desenvolver o calculo é necessário as seguintes informações:
+            - Quantidade horas trabalhadas;
+            - Valor da hora de trabalho;
+            - Percentual de desconto do INSS;
+        - Informar a classificação salarial
+        */
+
+        var js_controle = true
+
+        do{
+            var js_qht = parseFloat(window.prompt('Quantidade de horas trabalhadas:', '00'));
+            var js_vht = parseFloat(window.prompt('Valor das horas trabalhadas:', '00'));
+            var js_percInss = parseFloat(window.prompt('Percentual INSS:', '00'));
+
+            var js_sl = (js_qht*js_vht) - ((js_qht*js_vht)*js_percInss/100);
+
+            document.write('<p>Quantidade de horas trabalhadas:' + js_qht + ' h');
+            document.write('<p>Salário: R$' + js_sl);
+
+            if (js_sl > 10500){
+                document.write('...Salário elevado');
+            }
+            else{
+                if (js_sl > 6000){
+                    document.write('...Salário satisfatório');
+                }
+                else{
+                    if (js_sl > 3000){
+                        document.write('...Salário moderado');
+                    }
+                    else{
+                        document.write('...Salário insatisfatório');
+                    }
+                }
+            }
+
+            document.write('<p>-----------------------------------------------------------------');
+            js_controle = window.confirm('Continuar:');
+        }
+        while (js_controle);
+
+    </script>
+</body>
+</html>

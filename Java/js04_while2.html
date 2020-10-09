@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>js04_while2</title>
+</head>
+<body>
+    <script language="JavaScript">
+        /*
+        Objetivo:
+        Executar uma sequência de comandos por uma quantidade indeterminada,
+        utilizando variável de controle no lugar dos delimitadores.
+        O controle pode ser feito atravéz de perguntas na tela, utilizando o método confirm().
+        */
+
+        var js_controle = true;
+        var js_qtd_repetições = 1;
+
+        while (js_controle){
+            document.write('<p>' + js_qtd_repetições + 'ª Repetição');
+            js_qtd_repetições++
+            js_controle = window.confirm('Deseja continuar:');
+        }
+    </script>
+</body>
+</html>

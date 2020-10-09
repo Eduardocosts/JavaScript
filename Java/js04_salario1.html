@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>js04_salario1</title>
+</head>
+<body>
+    <script>
+        /*
+        Objetivo: calcular o salario liquido de um funcionário que trabalho por hora.
+        - Para desenvolver o calculo é necessário ter as seguintes informações:
+            - Quantidade de horas trabalhadas no mês (js_qht)
+            - Valor de hora de trabalho (js_vht)
+            - Percentual de desconto no INSS (js_inss)
+        - Informar a classificação Salarial
+        */
+
+        var js_qht = parseInt(window.prompt('Horas trabalhadas no mês:', '00'));
+        var js_vht = parseInt(window.prompt('Valor de hora:', '00'));
+        var js_inss = parseInt(window.prompt('Percentual INSS:', '00'));
+        var js_sl = (js_qht*js_vht) - ((js_qht*js_vht)*js_inss/100);
+        var js_sb = js_qht*js_vht;
+
+        document.write(`Horas trabalhadas: ${js_qht} h<br>`);
+        document.write(`Saláriio Bruto: ${js_sb}R$<br>`);
+        document.write(`Salario Liquido: ${js_sl}R$`);
+
+        if (js_sl > 10500){
+            document.write(' ...(<b>Salário Elevado! </b>maior que 10500)');
+        }
+        else{
+            if (js_sl > 6000){
+                document.write(' ...(<b>Salário satisfatório! </b>maior que 6000)');
+            }
+            else{
+                if (js_sl > 3000){
+                    document.write(' ...(<b>Salário Moderado </b>maior que 3000)');
+                }
+                else{
+                    document.write(' ...(<b>Salário Insastisfatório </b>)menor ou igual 3000')
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>

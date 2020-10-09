@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+<title >Js05_UpperLowerCase.htm - conversão de string</title>
+<meta http-equiv="content type" content="text/html; charset=utf-8">
+<meta charset="utf-8"/>
+
+</head>
+<body>
+
+<!-- linha de comentario html: entrada de dados via formulario -->
+	<h3> Formul&aacute;rio de consulta de curso;:</h3>
+	<p>
+	<form name="Formcurso" action="" method="post">
+		digite seu curso: <input type="text" name="f_cursodig" size="8" maxlength="4" /> (SIST) <p></p>
+		<input type="button" name="btn_validar" value="Validar" onclick="cadcurso()" />
+		<input type="reset" name="btn_cancelar" value="Cancelar" /> <p></p>
+		C&oacute;digo do curso: <input type="text" name="f_codcurso" size="15" maxlength="10" />
+	</form>
+
+
+<!-- linha de comentario html: entrada de dados via formulario -->
+<script language="javascript">
+<!--
+
+/* OBJETIVO: capturar o nome do curso e apresentar o codigo correspondente 
+	verficar:
+	se js_cursodig for igual a SIST, apresentar o codigo correspondente
+		caso contrario apresenta a msg "curso invalido" 
+	objetivo e método:
+		entrada: document.form
+		saida: document.form (para o codigo no campo de saida do formulario)
+		saida: window.alert (para codigo invalido de janela de alerta)
+	formulario: formcurso
+	função: cadcurso
+	evento: onclicl*/
+
+/* Definição de variáveis */
+var js_cursodig;
+
+/*função cadcurso() */
+function cadcurso(){
+	js_cursodig = document.formcurso.f_cursodig.value;
+	if (js_cursodig.toUpperCase()=="SIST"){
+		document.formcurso.f_codcurso.value="SIST001/FB"
+	}
+	else{
+		window.alert("curso.inv\U88E1lido!")
+	}
+}
+
+//-->
+</script>
+</body>
+</html>
